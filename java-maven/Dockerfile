@@ -30,4 +30,6 @@ COPY ./S2iScripts/ /usr/local/s2i
 
 #RUN whoami 
 
+USER 0
+
 CMD ["/usr/local/s2i/usage"]
