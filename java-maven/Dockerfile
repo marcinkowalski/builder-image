@@ -22,7 +22,7 @@ COPY ./S2iScripts/ /usr/local/s2i
 
 # RUN chmod -R 777 /usr/
 
-# RUN chmod -R 777 /usr/local/s2i/
+RUN chmod -R 777 /usr/local/s2i/
 
 
 RUN whoami 
