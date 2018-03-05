@@ -18,10 +18,11 @@ RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
 
 COPY ./S2iScripts/ /usr/local/s2i
 
-RUN chmod u+x /usr/local/s2i/*
+# RUN chmod u+x /usr/local/s2i/*
+
+RUN chmod -R 777 /usr/
 
 RUN whoami 
-
 
 USER 10001
 
