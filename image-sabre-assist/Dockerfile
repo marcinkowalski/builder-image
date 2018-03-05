@@ -1,7 +1,7 @@
 FROM maven:3.5.2-jdk-8
 MAINTAINER marcin.kowalski@sabre.com
 
-RUN yum install -y java wget mvn --setopt=tsflags=nodocs && yum -y clean all
+#RUN yum install -y java wget mvn --setopt=tsflags=nodocs && yum -y clean all
 
 LABEL io.k8s.description="builder imges Java8 " \
       io.k8s.display-name="Java8" \
@@ -16,7 +16,7 @@ RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
 
 COPY ./S2iScripts/ /usr/local/s2i
 
-RUN chmod -R 7777 /usr/local/s2i/
+RUN chmod -R 777 /usr/local/s2i/
 
 USER 10001
 
