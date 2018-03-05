@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM maven:3.5.2-jdk-8
 MAINTAINER marcin.kowalski@sabre.com
 
 RUN yum install -y java wget mvn --setopt=tsflags=nodocs && yum -y clean all
