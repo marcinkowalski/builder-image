@@ -10,14 +10,14 @@ LABEL io.k8s.description="builder imges Java8 " \
       io.openshift.s2i.destination="/opt/app" \
       io.openshift.s2i.scripts-url=image:///usr/local/s2i
 
-RUN mkdir -p /opt/app
+RUN adduser --system -u 10001 javauser
+
+RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
 
 COPY ./S2iScripts/ /usr/local/s2i
 
-USER 0
+RUN chmod u+x /usr/local/s2i/*
 
-EXPOSE 8080
-
-
+USER 10001
 
 CMD ["/usr/local/s2i/usage"]
