@@ -26,7 +26,7 @@ RUN chmod -R u+x /usr/local/s2i/
 
 #RUN whoami 
 
-#USER 10001
+USER 10001
 
 #RUN whoami 
 
