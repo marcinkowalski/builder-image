@@ -12,12 +12,20 @@ LABEL io.k8s.description="builder imges Java8 " \
 
 RUN adduser --system -u 10001 javauser
 
+RUN whoami 
+
 RUN mkdir -p /opt/app  && chown -R javauser: /opt/app
 
 COPY ./S2iScripts/ /usr/local/s2i
 
 RUN chmod u+x /usr/local/s2i/*
 
+RUN whoami 
+
+
 USER 10001
+
+RUN whoami 
+
 
 CMD ["/usr/local/s2i/usage"]
